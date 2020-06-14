@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="jjimenez" id="03">
+        <createTable tableName="tabla_doctor">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="nombres_doctor" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="apellidos_doctor" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telefono_doctor" type="VARCHAR(12)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="correo_electronico_doctor" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="estado_doctor" type="BOOLEAN" defaultValue="true"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="tabla_doctor"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
