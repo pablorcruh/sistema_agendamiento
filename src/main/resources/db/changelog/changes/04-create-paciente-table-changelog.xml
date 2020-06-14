@@ -5,33 +5,34 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet author="jjimenez" id="03">
-        <createTable tableName="tabla_doctor">
+    <changeSet author="jjimenez" id="04">
+        <createTable tableName="tabla_paciente">
             <column autoIncrement="true" name="id" type="INT">
                 <constraints primaryKey="true"/>
             </column>
-            <column name="nombres_doctor" type="VARCHAR(100)">
+            <column name="nombres_paciente" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="apellidos_doctor" type="VARCHAR(100)">
+            <column name="apellidos_paciente" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="telefono_doctor" type="VARCHAR(12)">
+            <column name="telefono_paciente" type="VARCHAR(12)">
                 <constraints nullable="false"/>
             </column>
-            <column name="correo_electronico_doctor" type="VARCHAR(60)">
+            <column name="correo_electronico_paciente" type="VARCHAR(60)">
                 <constraints nullable="false"/>
             </column>
-            <column name="estado_doctor" type="BOOLEAN" defaultValue="true"/>
-            <column name="username_doctor" type="VARCHAR(45)">
+            <column name="estado_paciente" type="BOOLEAN" defaultValue="true"/>
+            <column name="username_paciente" type="VARCHAR(45)">
                 <constraints unique="true" nullable="false"/>
             </column>
-            <column name="password_doctor" type="VARCHAR(60)">
+            <column name="password_paciente" type="VARCHAR(60)">
                 <constraints nullable="false"/>
             </column>
+            <column name="email_paciente_confirmado" type="BOOLEAN" defaultValue="false"/>
         </createTable>
         <rollback>
-            <dropTable tableName="tabla_doctor"/>
+            <dropTable tableName="tabla_paciente"/>
         </rollback>
     </changeSet>
 </databaseChangeLog>
