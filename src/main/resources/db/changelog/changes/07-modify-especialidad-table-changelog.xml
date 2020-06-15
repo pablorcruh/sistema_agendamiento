@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="jjimenez" id="07">
+        <addColumn tableName="tabla_especialidad">
+            <column name="doctor_id" type="INT"/>
+        </addColumn>
+        
+        <addForeignKeyConstraint
+                baseTableName="tabla_especialidad"
+                baseColumnNames="doctor_id"
+                constraintName="fk_doctortable"
+                referencedTableName="doctor"
+                referencedColumnNames="id"/>
+
+    </changeSet>
+</databaseChangeLog>
