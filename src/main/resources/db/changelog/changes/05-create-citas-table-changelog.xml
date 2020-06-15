@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="pcruz" id="05">
+        <createTable tableName="tabla_citas">
+        <column name="doctor_id" type="INT">
+            <constraints
+                    foreignKeyName="fk_doctor_cita" references="tabla_doctor(id)"/>
+        </column>
+        <column name="paciente_id" type="INT">
+            <constraints
+                    foreignKeyName="fk_paciente_cita" references="tabla_paciente(id)"/>
+        </column>
+        <column name="hora_id" type="INT">
+            <constraints
+                    foreignKeyName="fk_hora_cita" references="tabla_hora(id)"/>
+        </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

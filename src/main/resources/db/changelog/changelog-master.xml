@@ -9,4 +9,6 @@
     <include file="/db/changelog/changes/02-create-hora-table-changelog.xml"/>
     <include file="/db/changelog/changes/03-create-doctor-table-changelog.xml"/>
     <include file="/db/changelog/changes/04-create-paciente-table-changelog.xml"/>
+    <include file="/db/changelog/changes/05-create-citas-table-changelog.xml"/>
+
 </databaseChangeLog>
