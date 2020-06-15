@@ -16,7 +16,7 @@
             <column name="estado_especialidad" type="BOOLEAN" defaultValue="true"/>
         </createTable>
         <rollback>
-            <dropTable tableName="tabla_paciente"/>
+            <dropTable tableName="tabla_especialidad"/>
         </rollback>
     </changeSet>
 </databaseChangeLog>
