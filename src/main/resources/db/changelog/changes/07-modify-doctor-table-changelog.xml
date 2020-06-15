@@ -6,15 +6,15 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     <changeSet author="jjimenez" id="07">
-        <addColumn tableName="tabla_especialidad">
-            <column name="doctor_id" type="INT"/>
+        <addColumn tableName="tabla_doctor">
+            <column name="especialidad_id" type="INT"/>
         </addColumn>
         
         <addForeignKeyConstraint
-                baseTableName="tabla_especialidad"
-                baseColumnNames="doctor_id"
-                constraintName="fk_doctortable"
-                referencedTableName="doctor"
+                baseTableName="tabla_doctor"
+                baseColumnNames="especialidad_id"
+                constraintName="fk_doctorespecialidad"
+                referencedTableName="tabla_especialidad"
                 referencedColumnNames="id"/>
 
     </changeSet>
